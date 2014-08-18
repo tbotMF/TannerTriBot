@@ -18,7 +18,7 @@ public class TanAll extends Action {
 				skillManager.getMasterIndex(), skillManager.getChildIndex());
 		if (productInterface != null)
 			if (productInterface.click("Tan All"))
-				if (!Timing.waitCondition(new Condition() {
+				if (Timing.waitCondition(new Condition() {
 
 					@Override
 					public boolean active() {
@@ -27,8 +27,7 @@ public class TanAll extends Action {
 					}
 
 				}, General.random(2000, 3000)))
-					return;
-		SkillGlobals.ARRIVED_AT_DEPOSITORY.setStatus(false);
+			SkillGlobals.ARRIVED_AT_DEPOSITORY.setStatus(false);
 
 	}
 
